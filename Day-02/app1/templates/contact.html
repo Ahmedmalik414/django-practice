@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Day 02{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div>
+    <h1 class="title">Let’s keep it simple.</h1>
+    <p class="subtitle">
+      This contact page is a clean example of template inheritance with a
+      focused layout. Add your own form later if you want.
+    </p>
+    <div class="pill-row">
+      <div class="pill">Direct</div>
+      <div class="pill">Friendly</div>
+      <div class="pill">Minimal</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="grid-two">
+      <div>
+        <h3>Email</h3>
+        <p>hello@example.com</p>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p>Any City, Any Country</p>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <p>Mon–Fri · 9:00–17:00</p>
+      </div>
+      <div>
+        <h3>Tip</h3>
+        <p>Replace these details with your own later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cards">
+  <article class="card" style="animation-delay: 0.05s;">
+    <h3>Short and clear</h3>
+    <p>Give just enough info for someone to reach you confidently.</p>
+  </article>
+  <article class="card" style="animation-delay: 0.13s;">
+    <h3>Human tone</h3>
+    <p>Write like a real person, not a company policy page.</p>
+  </article>
+  <article class="card" style="animation-delay: 0.21s;">
+    <h3>Next step</h3>
+    <p>Add a real form when you’re ready to practice Django forms.</p>
+  </article>
+</section>
+{% endblock %}

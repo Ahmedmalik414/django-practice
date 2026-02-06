@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Day 02{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101010;
+      --muted: #5c5c5c;
+      --paper: #f9f6f1;
+      --sun: #ffd166;
+      --coral: #ef6f6c;
+      --ocean: #1f7a8c;
+      --leaf: #2a9d8f;
+      --shadow: 0 12px 30px rgba(0,0,0,0.12);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 600px at 10% 10%, #fff2d9 0%, transparent 60%),
+                  radial-gradient(900px 600px at 90% 0%, #e3f2f6 0%, transparent 55%),
+                  linear-gradient(160deg, #fbf7ef 0%, #f4f1ea 35%, #eef6f7 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 26px clamp(20px, 4vw, 64px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(249, 246, 241, 0.7);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      z-index: 5;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: conic-gradient(from 120deg, var(--ocean), var(--leaf), var(--sun), var(--coral), var(--ocean));
+      box-shadow: var(--shadow);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    nav a {
+      padding: 10px 14px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background: rgba(31, 122, 140, 0.12);
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    main {
+      padding: 40px clamp(20px, 6vw, 90px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 36px;
+    }
+
+    .title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 52px);
+      margin: 0 0 12px 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 18px 0;
+      font-size: 1.05rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+      transform: translateY(8px);
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(300px 200px at 20% 0%, rgba(255, 209, 102, 0.35), transparent 60%);
+      pointer-events: none;
+    }
+
+    .card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 24px clamp(20px, 6vw, 90px) 32px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-tag {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.9);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    @keyframes rise {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        gap: 6px;
+        font-size: 0.95rem;
+      }
+
+      nav a {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div>
+          <div>Day 02 Frontend</div>
+          <div style="font-size: 0.8rem; color: var(--muted); font-weight: 500;">URLs • Views • Templates</div>
+        </div>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+      <div class="footer-tag">Learning Django, one day at a time</div>
+      <div>Made for Day 02 practice</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}About | Day 02{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div>
+    <h1 class="title">About this mini project.</h1>
+    <p class="subtitle">
+      This page is here to practice clean URL routing, function-based views,
+      and reusable templates. Keep it simple, consistent, and readable.
+    </p>
+    <div class="pill-row">
+      <div class="pill">Purposeful layout</div>
+      <div class="pill">Reusable blocks</div>
+      <div class="pill">Readable HTML</div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Why it matters</h3>
+    <p>
+      When your structure is clear, every new page becomes easy: add a URL,
+      point it at a view, and drop in a template that extends the base layout.
+    </p>
+  </div>
+</section>
+
+<section class="cards">
+  <article class="card" style="animation-delay: 0.08s;">
+    <h3>Clarity</h3>
+    <p>Organize URLs and templates so your future self can scan fast.</p>
+  </article>
+  <article class="card" style="animation-delay: 0.16s;">
+    <h3>Consistency</h3>
+    <p>Base templates help every page feel connected and polished.</p>
+  </article>
+  <article class="card" style="animation-delay: 0.24s;">
+    <h3>Momentum</h3>
+    <p>Once the pattern is set, new pages take minutes instead of hours.</p>
+  </article>
+</section>
+{% endblock %}

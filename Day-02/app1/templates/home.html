@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Day 02{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div>
+    <h1 class="title">Build clean pages, fast.</h1>
+    <p class="subtitle">
+      Your Day 02 practice is now a simple, elegant site structure with URL routing,
+      function-based views, templates, and inheritance. Keep it light, keep it sharp.
+    </p>
+    <div class="pill-row">
+      <div class="pill">Route mapping</div>
+      <div class="pill">Template engine</div>
+      <div class="pill">Reusable layout</div>
+      <div class="pill">Dynamic context</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="grid-two">
+      <div>
+        <h3>Today’s Focus</h3>
+        <p>Connect URLs to views, then views to templates. Keep everything readable.</p>
+      </div>
+      <div>
+        <h3>Quick Win</h3>
+        <p>Use a single base layout for all pages. It saves time and looks consistent.</p>
+      </div>
+      <div>
+        <h3>Mindset</h3>
+        <p>Think of templates as your UI layer: clear structure, simple blocks.</p>
+      </div>
+      <div>
+        <h3>Next Step</h3>
+        <p>Start passing real dynamic data into these templates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cards">
+  <article class="card" style="animation-delay: 0.05s;">
+    <h3>Home</h3>
+    <p>First impression matters. Make it calm, useful, and confident.</p>
+  </article>
+  <article class="card" style="animation-delay: 0.12s;">
+    <h3>About</h3>
+    <p>Explain your purpose with a clean visual rhythm and short lines.</p>
+  </article>
+  <article class="card" style="animation-delay: 0.2s;">
+    <h3>Contact</h3>
+    <p>Invite the user to connect. Keep it friendly and simple.</p>
+  </article>
+</section>
+{% endblock %}
