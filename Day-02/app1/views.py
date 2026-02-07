@@ -12,4 +12,4 @@ def contact(request):
 
 def list(request):
     items = ["Django", "React", "PostgreSQL", "Docker"]
-    return render(request, "list.html",{"items": items})
+    return render(request, "list.html",{"items": items}) 
