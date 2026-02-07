@@ -20,7 +20,7 @@ class Category(models.Model):
         return self.name
 
 
-class Tags(models.Model):
+class Tag(models.Model):
     name=models.CharField(max_length=200)
     def __str__(self):
         return self.name
@@ -28,7 +28,7 @@ class Tags(models.Model):
 class Blogpost(models.Model):  
     title= models.CharField(max_length=100) 
     content= models.TextField(max_length=1000)
-    tags= models.ManyToManyField(Tags)
+    tag= models.ManyToManyField(Tag)
     category=models.ForeignKey(Category,on_delete=models.CASCADE)
     author= models.ForeignKey(Userprofile,on_delete=models.CASCADE)
     def __str__(self):
