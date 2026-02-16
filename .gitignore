@@ -47,3 +47,6 @@ build/
 .coverage
 htmlcov/
 .pytest_cache/
+
+plan.md
+Django-project
